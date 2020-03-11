@@ -17,8 +17,7 @@ common_CPPFLAGS = \
 	-DWSTRING_CONVERSION_SUPPORT \
 	-DREQUIRE_RNR
 
-common_LIBADD = -licule -licutu -licuio -licuuc -liculx -licudata -licui18n \
-	-lboost_thread -lboost_system
+common_LIBADD = -liculx -licutest -licutu -licuio -licuuc -liculx -licudata -licui18n -lboost_thread -lboost_system
 
 picosel_picosel_CPPFLAGS = $(common_CPPFLAGS) -O2 -fpermissive
 
@@ -44,7 +43,7 @@ ccfx_ccfx_CPPFLAGS = $(common_CPPFLAGS) -O2 -fpermissive -DINIPATH=\"$(inidir)\"
 ccfx_ccfx_LDFLAGS = $(common_LIBADD)
 
 torq_pyeasytorq_easytorq_la_CPPFLAGS = $(common_CPPFLAGS) \
-	-O2 -fpermissive $(PYTHON_INCLUDES)
+	-O2 -fpermissive $(PYTHON_INCLUDES) -I/usr/include/python2.7/
 
 torq_pyeasytorq_easytorq_la_SOURCES = \
 	torq/pyeasytorq/pyeasytorq.cpp \
